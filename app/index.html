@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>LEONIDA TROPHY GUIDE</h1>
+    <p class="sub">All 55 trophies, a roadmap to the platinum, and a tracker that remembers where you are.</p>
+  </div>
+  <div class="platinum-box" id="platinumBox">
+    <span class="platinum-label">PLATINUM</span>
+    <strong>Vice Got a Price!</strong>
+    <span id="platinumNote">Earn the other 54 trophies.</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button id="tabList" type="button" class="tab active">Checklist</button>
+  <button id="tabRoadmap" type="button" class="tab">Roadmap to Platinum</button>
+</nav>
+
+<section id="roadmapView" class="view" hidden>
+  <div class="callout missable-callout">
+    <strong>⚠ One trophy can be missed.</strong>
+    <span><b>Positive Mental Attitude</b> — in Chapter 1, the morning after the mission <i>Down to Earth</i>, follow Lucia to the balcony at Jason's house and accept her meditation. It is gone after Chapter 1, and it is still unconfirmed whether the trophy needs it. Do it anyway: two minutes, zero risk. (PowerPyx, vi.ki)</span>
+  </div>
+  <div class="steps" id="roadmapSteps"></div>
+  <h2>The 100% checklist, in numbers</h2>
+  <p class="hint">After the story, open <b>Progress &gt; Stats &gt; 100% Completion</b>. The checklist is a selection, not everything — these are the numbers it asks for. (PowerPyx, KeenGamer)</p>
+  <div class="check-grid" id="checkGrid"></div>
+  <p class="hint">Roadmap figures: PowerPyx rates the platinum 4/10 and about 200 hours in one playthrough, with no online trophies and no mission replay. Push Square puts the story at 60–80 hours before the cleanup begins.</p>
+</section>
+
+<section id="listView" class="view">
+  <div class="progress-wrap">
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    <p id="progressText" class="progress-text">0 of 55 earned</p>
+  </div>
+
+  <div class="controls">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission, activity…" autocomplete="off"></label>
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="online">Online</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Show
+      <select id="earnedFilter">
+        <option value="all">All trophies</option>
+        <option value="earned">Earned only</option>
+        <option value="remaining">Not earned yet</option>
+      </select>
+    </label>
+    <label class="spoiler-toggle"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+    <button id="export" type="button">Export progress</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+  </div>
+
+  <p id="countLine" class="count-line"></p>
+  <div id="emptyNote" class="empty-note" hidden></div>
+  <ul id="trophyList" class="trophy-list"></ul>
+</section>
+
+<footer>
+  <p>Guides are written in our own words for this guide. Official trophy names and descriptions are shown as PlayStation publishes them. Sources are named beside every guide — a fact with no source earns no credit here. No Rockstar Games logo or artwork is used. Works offline: every file this page loads lives in this folder.</p>
+  <p id="sourceList"></p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
